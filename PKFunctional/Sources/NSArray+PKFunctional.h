@@ -170,7 +170,7 @@
 - (id)pk_foldr:(id)initial block:(id(^)(id acc, id obj))func;
 
 /**
- *  Returns whether or not any array elements passes the function.
+ *  Returns whether or not any array element passes the function.
  *
  *  @param func Function applied to each element until it passes.
  *
