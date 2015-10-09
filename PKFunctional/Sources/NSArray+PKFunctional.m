@@ -222,5 +222,16 @@
     }];
 }
 
+- (BOOL)pk_any:(BOOL(^)(id obj))func
+{
+    for (int i = 0; i < self.count; i++) {
+        if (func(self[i])) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 @end
 

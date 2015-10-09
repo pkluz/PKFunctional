@@ -40,7 +40,7 @@
 /**
  *  Applies of function to every element of the array, producing a new array.
  *
- *  @param func Function that is applied accross every element in the array.
+ *  @param func Function that is applied across every element in the array.
  *
  *  @return Returns a new array containing the mapped objects.
  */
@@ -168,6 +168,15 @@
  *  @return A single value, which all other values have been folded into.
  */
 - (id)pk_foldr:(id)initial block:(id(^)(id acc, id obj))func;
+
+/**
+ *  Returns whether or not any array elements passes the function.
+ *
+ *  @param func Function applied to each element until it passes.
+ *
+ *  @return Boolean, YES if any elements matches, NO otherwise.
+ */
+- (BOOL)pk_any:(BOOL(^)(id obj))func;
 
 @end
 
