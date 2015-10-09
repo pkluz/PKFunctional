@@ -222,5 +222,16 @@
     }];
 }
 
+- (BOOL)pk_any:(BOOL(^)(id obj))func
+{
+    for (id obj in self) {
+        if (func(obj)) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 @end
 
