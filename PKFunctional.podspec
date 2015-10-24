@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                = "PKFunctional"
-    s.version             = "0.1.3"
+    s.version             = "0.1.4"
     s.summary             = "Functional extensions to Foundation classes."
     s.description         = "Adds a very light touch of higher-order functions to Foundation's classes."
     s.homepage            = "http://github.com/pkluz/PKFunctional"
