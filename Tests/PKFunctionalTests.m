@@ -287,17 +287,17 @@
     XCTAssertFalse(anyOdds);
 }
 
-- (void)testArrayFindFirst
+- (void)testArrayFind
 {
     NSArray *numbers = [self arrayOfNumbers];
     
-    NSNumber *foundNumber = [numbers pk_findFirst:^BOOL(id obj) {
+    NSNumber *foundNumber = [numbers pk_find:^BOOL(id obj) {
         return [obj integerValue] == 5;
     }];
     
     XCTAssert([foundNumber isEqualToNumber:@(5)]);
     
-    foundNumber = [numbers pk_findFirst:^BOOL(id obj) {
+    foundNumber = [numbers pk_find:^BOOL(id obj) {
         return [obj integerValue] == 1234;
     }];
     

@@ -185,7 +185,7 @@
  *
  *  @return An object from the array that passes the function, or nil.
  */
-- (id)pk_findFirst:(BOOL(^)(id obj))func;
+- (id)pk_find:(BOOL(^)(id obj))func;
 
 @end
 

@@ -233,7 +233,7 @@
     return NO;
 }
 
-- (id)pk_findFirst:(BOOL(^)(id obj))func
+- (id)pk_find:(BOOL(^)(id obj))func
 {
     for (id obj in self) {
         if (func(obj)) {
