@@ -233,5 +233,16 @@
     return NO;
 }
 
+- (id)pk_find:(BOOL(^)(id obj))func
+{
+    for (id obj in self) {
+        if (func(obj)) {
+            return obj;
+        }
+    }
+    
+    return nil;
+}
+
 @end
 

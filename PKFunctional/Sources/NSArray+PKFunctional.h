@@ -178,5 +178,14 @@
  */
 - (BOOL)pk_any:(BOOL(^)(id obj))func;
 
+/**
+ *  Finds the first element in the array that passes the function. If no such element exists, nil is returned.
+ *
+ *  @param func Function applied to each element until it passes.
+ *
+ *  @return An object from the array that passes the function, or nil.
+ */
+- (id)pk_find:(BOOL(^)(id obj))func;
+
 @end
 

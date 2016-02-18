@@ -272,6 +272,38 @@
     XCTAssert([quotient isEqualToNumber:result], @"Error: Result of array foldl (= %@) did not match expected value (= %@).", result, quotient);
 }
 
+- (void)testArrayAny
+{
+    BOOL anyThrees = [[self arrayOfNumbers] pk_any:^BOOL(id obj) {
+        return [obj integerValue] == 3;
+    }];
+    
+    XCTAssert(anyThrees);
+    
+    BOOL anyOdds = [[self arrayOfEvenNumbers] pk_any:^BOOL(id obj) {
+        return [obj integerValue] % 2 == 1;
+    }];
+    
+    XCTAssertFalse(anyOdds);
+}
+
+- (void)testArrayFind
+{
+    NSArray *numbers = [self arrayOfNumbers];
+    
+    NSNumber *foundNumber = [numbers pk_find:^BOOL(id obj) {
+        return [obj integerValue] == 5;
+    }];
+    
+    XCTAssert([foundNumber isEqualToNumber:@(5)]);
+    
+    foundNumber = [numbers pk_find:^BOOL(id obj) {
+        return [obj integerValue] == 1234;
+    }];
+    
+    XCTAssertNil(foundNumber);
+}
+
 
 #pragma mark - Test Data
 
