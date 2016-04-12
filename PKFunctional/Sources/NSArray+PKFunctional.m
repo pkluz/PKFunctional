@@ -244,5 +244,16 @@
     return nil;
 }
 
+- (void)pk_each:(void (^)(id obj))func
+{
+    if (!func) {
+        return;
+    }
+    
+    for (id obj in self) {
+        func(obj);
+    }
+}
+
 @end
 

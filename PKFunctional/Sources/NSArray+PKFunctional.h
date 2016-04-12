@@ -187,5 +187,12 @@
  */
 - (id)pk_find:(BOOL(^)(id obj))func;
 
+/**
+ *  Applies the function to each element of the array.
+ *
+ *  @param func Function applied to each element.
+ */
+- (void)pk_each:(void (^)(id obj))func;
+
 @end
 
