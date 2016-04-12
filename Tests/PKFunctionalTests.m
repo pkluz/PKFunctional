@@ -304,6 +304,18 @@
     XCTAssertNil(foundNumber);
 }
 
+- (void)testArrayEach
+{
+    __block NSInteger sum = 0;
+    
+    NSArray *numbers = [self arrayOfNumbers];
+    
+    [numbers pk_each:^(NSNumber *number) {
+        sum += [number integerValue];
+    }];
+    
+    XCTAssert(sum == 45);
+}
 
 #pragma mark - Test Data
 
