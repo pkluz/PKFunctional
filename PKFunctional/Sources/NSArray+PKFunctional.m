@@ -233,6 +233,17 @@
     return NO;
 }
 
+- (BOOL)pk_all:(BOOL(^)(id obj))func
+{
+    for (id obj in self) {
+        if (!func(obj)) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (id)pk_find:(BOOL(^)(id obj))func
 {
     for (id obj in self) {

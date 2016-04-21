@@ -178,6 +178,16 @@
  */
 - (BOOL)pk_any:(BOOL(^)(id obj))func;
 
+
+/**
+ *  Returns whether or not all array elements pass the function.
+ *
+ *  @param func Function applied to each element.
+ *
+ *  @return Boolean, YES if all elements pass, NO otherwise.
+ */
+- (BOOL)pk_all:(BOOL(^)(id obj))func;
+
 /**
  *  Finds the first element in the array that passes the function. If no such element exists, nil is returned.
  *

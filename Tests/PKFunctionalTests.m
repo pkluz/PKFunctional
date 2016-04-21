@@ -287,6 +287,21 @@
     XCTAssertFalse(anyOdds);
 }
 
+- (void)testArrayAll
+{
+    BOOL allLessThanTen = [[self arrayOfNumbers] pk_all:^BOOL(id obj) {
+        return [obj integerValue] < 10;
+    }];
+    
+    XCTAssert(allLessThanTen);
+    
+    BOOL allGreaterThanZero = [[self arrayOfNumbers] pk_all:^BOOL(id obj) {
+        return [obj integerValue] > 0;
+    }];
+    
+    XCTAssertFalse(allGreaterThanZero);
+}
+
 - (void)testArrayFind
 {
     NSArray *numbers = [self arrayOfNumbers];
